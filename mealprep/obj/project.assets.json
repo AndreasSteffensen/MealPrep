@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\mealprep.csproj",
-      "projectName": "mealprep",
-      "projectPath": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\mealprep.csproj",
+      "projectUniqueName": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\MealPrep.csproj",
+      "projectName": "MealPrep",
+      "projectPath": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\MealPrep.csproj",
       "packagesPath": "C:\\Users\\steff\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\obj\\",
+      "outputPath": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\steff\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -57,6 +57,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

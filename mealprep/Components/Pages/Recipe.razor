@@ -1,0 +1,61 @@
+﻿@page "/recipe"
+@rendermode InteractiveServer
+
+<PageTitle>Recipe</PageTitle>
+
+<h1>Recipe</h1>
+
+<div>
+    <label for="recipeName">Recipe Name:</label>
+    <InputText id="recipeName" @bind-Value="recipeName" />
+
+    <button @onclick="AddRecipe">Add Recipe</button>
+</div>
+
+<div>
+    <h2>Ingredients</h2>
+
+    @if (ingredients != null && ingredients.Any())
+    {
+        <ul>
+            @foreach (var ingredient in ingredients)
+            {
+                <li>@ingredient.Quantity - @ingredient.Name </li>
+            }
+        </ul>
+    }
+
+    <label for="newIngredient">New Ingredient:</label>
+    <InputText id="newIngredient" @bind-Value="newIngredient" />
+    <br />
+    <label for="amount">Amount:</label>
+    <InputNumber id="amount" @bind-Value="amount" />
+
+    <button @onclick="AddIngredient">Add Ingredient</button>
+</div>
+
+
+@code {
+    private string recipeName;
+    private Recipe newRecipe;
+    private string newIngredient;
+    private float amount;
+    private List<Ingredient> ingredients = new List<Ingredient>();
+
+    public void AddIngredient()
+    {
+        if (!string.IsNullOrEmpty(newIngredient))
+        {
+            ingredients.Add(new Ingredient(newIngredient, amount));
+            newIngredient = string.Empty;
+            amount = 0.0f;
+        }
+    }
+
+    public void AddRecipe()
+    {
+        newRecipe = new Recipe();
+        Recipe.SaveRecipe(recipeName, List<Ingredient>);
+        newRecipe = string.Empty;
+    }
+}

@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MealPrep.bundle.scp.css",
+      "PackagePath": "staticwebassets\\MealPrep.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MealPrep.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MealPrep.props",
+      "PackagePath": "build\\MealPrep.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MealPrep.props",
+      "PackagePath": "buildMultiTargeting\\MealPrep.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MealPrep.props",
+      "PackagePath": "buildTransitive\\MealPrep.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
