@@ -11,19 +11,16 @@
             Name = name;
         }
 
+        public bool testfunc (int var)
+        { 
+            if (var > 5)
+                return false;
+            else
+            {
+                return true;
+            }
+        }
         //TODO: add function that handles saving a recipe to a text file and with ingredients and all.
 
-    }
-
-    public class Ingredient
-    { 
-        public string Name { get; set; }
-        public float Quantity { get; set; }
-
-        public Ingredient(string name, float quantity) 
-        {
-            Name = name;
-            Quantity = quantity;
-        }
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4kv9Dm6Kh2V0UJW779tmdyiUDZqlFRhNu/kcS67flFo=",
+  "Hash": "zSszW9uK/ZolLQjcWnUOlZXptvmaxRVNvr3zWwJ+BsA=",
   "Source": "MealPrep",
   "BasePath": "_content/MealPrep",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "MealPrep\\wwwroot",
       "Source": "MealPrep",
-      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\wwwroot\\",
       "BasePath": "_content/MealPrep",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MealPrep.styles.css",
+      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MealPrep.styles.css",
       "SourceId": "MealPrep",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/MealPrep",
       "RelativePath": "MealPrep.styles.css",
       "AssetKind": "All",
@@ -33,13 +33,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MealPrep.styles.css"
+      "OriginalItemSpec": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\obj\\Debug\\net8.0\\scopedcss\\bundle\\MealPrep.styles.css"
     },
     {
-      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MealPrep.bundle.scp.css",
+      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MealPrep.bundle.scp.css",
       "SourceId": "MealPrep",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/MealPrep",
       "RelativePath": "MealPrep.bundle.scp.css",
       "AssetKind": "All",
@@ -52,13 +52,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MealPrep.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\MealPrep.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\wwwroot\\app.css",
       "SourceId": "MealPrep",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\wwwroot\\",
       "BasePath": "_content/MealPrep",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "MealPrep",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\wwwroot\\",
       "BasePath": "_content/MealPrep",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "MealPrep",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\wwwroot\\",
       "BasePath": "_content/MealPrep",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\wwwroot\\favicon.png",
       "SourceId": "MealPrep",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\wwwroot\\",
       "BasePath": "_content/MealPrep",
       "RelativePath": "favicon.png",
       "AssetKind": "All",

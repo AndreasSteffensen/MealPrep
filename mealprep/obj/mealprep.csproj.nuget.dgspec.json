@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\MealPrep.csproj": {}
+    "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\MealPrep.csproj": {}
   },
   "projects": {
-    "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\MealPrep.csproj": {
+    "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\MealPrep.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\MealPrep.csproj",
+        "projectUniqueName": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\MealPrep.csproj",
         "projectName": "MealPrep",
-        "projectPath": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\MealPrep.csproj",
+        "projectPath": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\MealPrep.csproj",
         "packagesPath": "C:\\Users\\steff\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\MealPrep\\obj\\",
+        "outputPath": "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\steff\\AppData\\Roaming\\NuGet\\NuGet.Config",
