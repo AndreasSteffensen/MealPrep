@@ -81,9 +81,10 @@ namespace MealPrep
 
             try
             {
-                using (StreamWriter writer = new StreamWriter(path))
+                using (StreamWriter writer = new StreamWriter(path, true))
                 {
-                    writer.WriteLine(ingredient);
+                    writer.Write(ingredient);
+                    writer.Write(",");
                     writer.Close();
                 }
             }
@@ -91,6 +92,12 @@ namespace MealPrep
             {
                 throw new FileNotFoundException();
             }
+        }
+
+        // TODO: Implement this if nessecary but don't think it will be
+        public void removeFromList(string ingredient) 
+        {
+
         }
     }
 }

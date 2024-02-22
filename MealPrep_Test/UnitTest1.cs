@@ -4,15 +4,13 @@ using System.Xml.Linq;
 
 namespace MealPrep_Test
 {
-    public class Tests
+    public class Test_ingrdient
     {
-        private Recipe _recipe { get; set; } = null!;
         private Ingredient _ingredient { get; set;} = null!;
 
         [SetUp]
         public void Setup()
         {
-            _recipe = new Recipe("test");
             _ingredient = new Ingredient("test");
         }
 
@@ -44,19 +42,70 @@ namespace MealPrep_Test
             Assert.IsFalse(_ingredient.listConsist(name2));
         }
 
-        /*
         [Test]
         public void WriteToList_Test()
         {
             //assign
             string ingredient = "Agurk";
             //act
-            Assert.IsFalse(_ingredient.listConsist(ingredient));
-            _ingredient.writeToList(ingredient);
+            if (_ingredient.listConsist(ingredient))
+            {
+                // Do nothing it's in the list. Test only works with something not in the list...
+            }
+            else
+            {
+                _ingredient.writeToList(ingredient);
+            }
 
             //Assert
             Assert.IsTrue(_ingredient.listConsist(ingredient));
+
+
+            //Clean up
+            //use remove for a cleaner test that work without if statement...
+        }
+
+        [Test]
+        public void 
+
+        /*
+         * unnessecary function RemoveFromList()
+        [Test]
+        public void RemoveFromList_Test()
+        {
+            string ingredient = "NotIngredient";
+
+            _ingredient.removeFromList(ingredient);
+
+            Assert.IsFalse(_ingredient.listConsist(ingredient));
+
         }
         */
+    }
+
+    public class Test_Recipe
+    {
+        private Recipe _recipe = null;
+        [SetUp]
+        public void Setup()
+        {
+            _recipe = new Recipe();
+        }
+
+        [Test]
+        public void readList_Test() 
+        {
+            // read List of Recipes 
+        }
+
+        [Test]
+        public void writeList_Test()
+        {
+            /*write to list of Recipes
+             * in format 
+             * Name, Ingredients: 1st,Quantity of 1st; 2nd,Quantity of 2nd .... until no more ingredients final Break and newline
+             */
+
+        }
     }
 }
