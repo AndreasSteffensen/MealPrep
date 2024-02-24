@@ -9,6 +9,7 @@ namespace MealPrep
         //TODO: fix to have a relative path from directory
         private string path = "C:\\Users\\steff\\Desktop\\Projekter\\MealPrep\\mealprep\\data\\Ingredients.txt";
         public string Name;
+        public string Unit = "i stk";
         public float Quantity = 0f;
 
         static public List<Ingredient> ingredients = new List<Ingredient>();
@@ -21,6 +22,13 @@ namespace MealPrep
         public Ingredient(string name, float quantity)
         {
             Name = name;
+            Quantity = quantity;
+        }
+
+        public Ingredient(string name, string unit, float quantity)
+        {
+            Name = name;
+            Unit = unit;
             Quantity = quantity;
         }
 
@@ -56,7 +64,7 @@ namespace MealPrep
             }
         }
 
-        public bool listConsist (string name)
+        public bool listConsist (Ingredient ingredient)
         {
             bool isInList = false;
             ingredients = readList();
@@ -66,13 +74,13 @@ namespace MealPrep
 
             foreach (Ingredient item in ingredients)
             {
-                if (item.Name == name)
+                if (item.Name == ingredient.Name)
                     isInList = true;
             }
             return isInList;
         }
 
-        public void writeToList(string ingredient)
+        public void writeToList(Ingredient ingredient)
         {
             if (listConsist(ingredient))
             {
@@ -83,7 +91,7 @@ namespace MealPrep
             {
                 using (StreamWriter writer = new StreamWriter(path, true))
                 {
-                    writer.Write(ingredient);
+                    writer.Write(ingredient.Name);
                     writer.Write(",");
                     writer.Close();
                 }

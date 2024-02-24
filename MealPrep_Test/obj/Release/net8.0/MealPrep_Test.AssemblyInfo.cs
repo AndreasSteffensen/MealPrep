@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MealPrep_Test")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+244c2185e5bc8d5c360534c3c9c17167f6b3e925")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4854e84a52a17e79c8243264a287b2930dc2a52f")]
 [assembly: System.Reflection.AssemblyProductAttribute("MealPrep_Test")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MealPrep_Test")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -24,29 +24,30 @@ namespace MealPrep_Test
             list = _ingredient.readList();
 
             //Assert
+            Assert.IsInstanceOf(typeof(Ingredient), list[0]);
             Assert.AreEqual("Jordskokker", list[0].Name.ToString());
-            Assert.AreEqual("Kartoffel", list[1].Name.ToString());
+            Assert.AreEqual("Kartofler", list[1].Name.ToString());
             Assert.AreEqual("Løg", list[2].Name.ToString());
         }
         [Test]
         public void listConsist_Test()
         {
             //assign
-            string name1 = "Løg";
-            string name2 = "Fuck";
+            Ingredient ingredient = new Ingredient("Løg");
+            Ingredient ingredient2 = new Ingredient("Fuck");
 
             //act
 
             //Assert
-            Assert.IsTrue(_ingredient.listConsist(name1));
-            Assert.IsFalse(_ingredient.listConsist(name2));
+            Assert.IsTrue(_ingredient.listConsist(ingredient));
+            Assert.IsFalse(_ingredient.listConsist(ingredient2));
         }
 
         [Test]
         public void WriteToList_Test()
         {
             //assign
-            string ingredient = "Agurk";
+            Ingredient ingredient = new Ingredient("Agurk");
             //act
             if (_ingredient.listConsist(ingredient))
             {
@@ -95,7 +96,14 @@ namespace MealPrep_Test
         [Test]
         public void readList_Test() 
         {
-            // read List of Recipes 
+            //Assign
+            List<Recipe> list = new List<Recipe>();
+            //Act
+            list = _recipe.readList();
+            //Assert
+            Assert.AreSame("Jordskokkesuppe", list[0].Name);
+            Assert.AreEqual("Jordskoker", list[0].Ingredients[0].Name);
+            Assert.IsInstanceOf(typeof(float), list[0].Ingredients[0].Quantity);
         }
 
         [Test]

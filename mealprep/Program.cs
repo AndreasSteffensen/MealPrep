@@ -1,4 +1,5 @@
 using MealPrep.Components;
+using MealPrep;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,7 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+DatabaseHelper.initializeDatabase();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
