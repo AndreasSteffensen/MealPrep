@@ -1,6 +1,7 @@
 ﻿@page "/recipe"
 @rendermode InteractiveServer
 @using MealPrep
+
 @inject NavigationManager NavigationManager
 
 <PageTitle>Recipe</PageTitle>
@@ -12,16 +13,30 @@
     <input type="text" id="recipeName" @bind="recipeName" />
     <label for="ingredients">Ingredients:</label>
     <div>
+        <div class="ingredient-row">
+            <label for="amount">Amount:</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <label for="unit">Unit:</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+            <label for="ingredienName">Ingredient Name:</label>
+        </div>
         @foreach (var ingredient in ingredients)
         {
             <div class="ingredient-row">
-                <input type="text" placeholder="Ingredient" @bind="ingredient.Name" />
-                <input type="text" placeholder="Unit" @bind="ingredient.Unit" />
                 <input type="number" placeholder="Amount" @bind="ingredient.Quantity" />
+                <input type="text" placeholder="Unit" @bind="ingredient.Unit" />
+                <input type="text" placeholder="Ingredient" @bind="ingredient.Name" />
             </div>
         }
-        <button type="button" @onclick="() => AddIngredientToDatabase()">Add Ingredient</button>
     </div>
+
+    <button @onclick="() => AddIngredientToRecipe()">Add Ingredient</button>
+    <label for="ingredientName">Ingredient Name:</label>
+    <input type="text" id="ingredientName" @bind="ingredient" />
+
+    <label for="unit">Unit of Ingredient:</label>
+    <input type="text" id="unit" @bind="unit" />
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" @bind="quantity" />
 
     <button @onclick="() => AddRecipeToDatabase()" type="submit">Add Recipe</button>
 </div>
@@ -37,7 +52,9 @@
 </div> 
 
 @code {
-    private string ?ingredient;
+    private string ingredient;
+    private string unit;
+    private float quantity;
     private string ?recipeName;
     List<Ingredient> ingredients = new List<Ingredient>();
 
@@ -50,11 +67,19 @@
         //TODO: check recipe db for given recipe and use unit and amount for meal juction
         //TODO: add to table of meals
     }
+    private void AddIngredientToRecipe()
+    {
+        ingredients.Add(new Ingredient(ingredient, unit, quantity));
+        ingredient = string.Empty;
+        unit = string.Empty;
+        quantity = 0;
+    }
 
     private void AddIngredientToDatabase()
     {
         try
         {
+            //TODO: add a check that searches the db and adds it to db if it does not exists already
             if (!string.IsNullOrEmpty(ingredient))
             {
                 var newIngredient = new Ingredient(ingredient);
