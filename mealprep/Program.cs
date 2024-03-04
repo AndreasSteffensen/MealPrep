@@ -21,7 +21,9 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
-DatabaseHelper.initializeDatabase();
+
+//TODO: make it so it only runs on very first run. otherwise it will override data. which we dont want...
+//DatabaseHelper.initializeDatabase();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();

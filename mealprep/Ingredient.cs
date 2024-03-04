@@ -11,6 +11,7 @@ namespace MealPrep
         public string Name;
         public string Unit = "i stk";
         public float Quantity = 0f;
+        public ICollection<Meal> Meals { get; set; }
 
         static public List<Ingredient> ingredients = new List<Ingredient>();
 

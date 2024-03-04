@@ -6,21 +6,40 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MealPrep
 {
-    public class ApplicationDbContext : DbContext
+    public class MealPrepDbContext : DbContext
     {
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<Meal> Meals { get; set; }
 
+        private static string connectionString = @"Data Source=..\..\MealPrep\mealprep\data\MealPrep.db;Version=3;";
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=MealPrep.db");
+            optionsBuilder.UseSqlite(connectionString);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Meal>()
+                .HasKey(ri => new { ri.RecipeId, ri.IngredientId });
+
+            modelBuilder.Entity<Meal>()
+                .HasOne(ri => ri.Recipe)
+                .WithMany(r => r.Meals)
+                .HasForeignKey(ri => ri.RecipeId);
+
+            modelBuilder.Entity<Meal>()
+                .HasOne(ri => ri.Ingredient)
+                .WithMany(i => i.Meals)
+                .HasForeignKey(ri => ri.IngredientId);
+            
         }
     }
 
     public static class DatabaseHelper
     {
-        private static string connectionString = @"Data Sources=..\..\MealPrep\mealprep\data\MealPrep.db;Version=3;";
+        // TODO: Fix path so it is more abstrack
+        private static string connectionString = @"Data Source=..\..\MealPrep\mealprep\data\MealPrep.db;Version=3;";
 
         public static void initializeDatabase()
         {
@@ -37,7 +56,6 @@ namespace MealPrep
                         CREATE TABLE IF NOT EXISTS recipe (
                             id INTEGER PRIMARY KEY AUTOINCREMENT,
                             name TEXT NOT NULL
-                            
                         );";
 
                     string createIngredientTableQuery = @"
@@ -48,7 +66,6 @@ namespace MealPrep
 
                     string createMealTableQuery = @"
                         CREATE TABLE IF NOT EXISTS meal (
-                            id INTEGER PRIMARY KEY AUTOINCREMENT,
                             recipe_id INT,
                             ingredient_id INT,
                             unit INT,
@@ -69,5 +86,32 @@ namespace MealPrep
                 }
             }
         }
+        public static void addIngredient(Ingredient ingredient) 
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                using(SQLiteCommand command = new SQLiteCommand(connection))
+                {
+                    command.CommandText =
+                        @"INSERT INTO ingredient (name)
+                        VALUES (@name);";
+                    command.Parameters.AddWithValue("@name", ingredient.Name);
+                    command.ExecuteNonQuery();
+                    command.Parameters.Clear();
+                }
+            }
+        }
+        /*
+        public static void readTable()
+        {
+
+            using(SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+            }
+        }
+        */
     }
 }

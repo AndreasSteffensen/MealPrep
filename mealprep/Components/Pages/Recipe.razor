@@ -1,61 +1,111 @@
 ﻿@page "/recipe"
 @rendermode InteractiveServer
+@using MealPrep
+@inject NavigationManager NavigationManager
 
 <PageTitle>Recipe</PageTitle>
 
-<h1>Recipe</h1>
+<h3 style="color: #1e90ff;">Add Recipe</h3>
 
-<div>
+<div class="form-container">
     <label for="recipeName">Recipe Name:</label>
-    <InputText id="recipeName" @bind-Value="recipeName" />
+    <input type="text" id="recipeName" @bind="recipeName" />
+    <label for="ingredients">Ingredients:</label>
+    <div>
+        @foreach (var ingredient in ingredients)
+        {
+            <div class="ingredient-row">
+                <input type="text" placeholder="Ingredient" @bind="ingredient.Name" />
+                <input type="text" placeholder="Unit" @bind="ingredient.Unit" />
+                <input type="number" placeholder="Amount" @bind="ingredient.Quantity" />
+            </div>
+        }
+        <button type="button" @onclick="() => AddIngredientToDatabase()">Add Ingredient</button>
+    </div>
 
-    <button @onclick="AddRecipe">Add Recipe</button>
+    <button @onclick="() => AddRecipeToDatabase()" type="submit">Add Recipe</button>
 </div>
 
-<div>
-    <h2>Ingredients</h2>
 
-    @if (ingredients != null && ingredients.Any())
-    {
-        <ul>
-            @foreach (var ingredient in ingredients)
-            {
-                <li>@ingredient.Quantity - @ingredient.Name </li>
-            }
-        </ul>
-    }
+<h3 style="color: #1e90ff;">Add Ingredient</h3>
 
-    <label for="newIngredient">New Ingredient:</label>
-    <InputText id="newIngredient" @bind-Value="newIngredient" />
-    <br />
-    <label for="amount">Amount:</label>
-    <InputNumber id="amount" @bind-Value="amount" />
-
-    <button @onclick="AddIngredient">Add Ingredient</button>
-</div>
-
+<div class="form-container">
+    <label for="ingredientName">Ingredient Name:</label>
+    <input type="text" id="ingredientName" @bind="ingredient" />
+    
+    <button @onclick="() => AddIngredientToDatabase()" type="submit">Add Ingredient</button>
+</div> 
 
 @code {
-    private string recipeName;
-    private Recipe newRecipe;
-    private string newIngredient;
-    private float amount;
-    private List<Ingredient> ingredients = new List<Ingredient>();
+    private string ?ingredient;
+    private string ?recipeName;
+    List<Ingredient> ingredients = new List<Ingredient>();
 
-    public void AddIngredient()
+    private void AddRecipeToDatabase()
     {
-        if (!string.IsNullOrEmpty(newIngredient))
+        //TODO: check if recipe is valid before you add it to database
+        //TODO: add to Table of Recipe
+        //TODO: check first table of ingredient for every ingredients to se if Database holds given ingredient
+        //TODO: add to table of ingredients
+        //TODO: check recipe db for given recipe and use unit and amount for meal juction
+        //TODO: add to table of meals
+    }
+
+    private void AddIngredientToDatabase()
+    {
+        try
         {
-            ingredients.Add(new Ingredient(newIngredient, amount));
-            newIngredient = string.Empty;
-            amount = 0.0f;
+            if (!string.IsNullOrEmpty(ingredient))
+            {
+                var newIngredient = new Ingredient(ingredient);
+                DatabaseHelper.addIngredient(newIngredient);
+                ingredient = string.Empty;
+                // Optionally, you can navigate to another page after adding the ingredient
+                //NavigationManager.NavigateTo("/");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
         }
     }
-
-    public void AddRecipe()
-    {
-        newRecipe = new Recipe();
-        //Recipe.SaveRecipe(recipeName, List<Ingredient>);
-        recipeName = string.Empty;
-    }
 }
+
+<style>
+    .form-container {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+    }
+
+    .ingredient-row {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        background-color: #1e90ff;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>

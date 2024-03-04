@@ -10,12 +10,12 @@ namespace MealPrep
         public int RecipeId { get; set; }
         public string Name { get; set; }
 
-        public List<Ingredient> Ingredients { get; set;}
+        public ICollection<Meal> Meals { get; set; }
 
-        public Recipe(string name, List<Ingredient> ingredients)
+
+        public Recipe(string name)
         {
             Name = name;
-            Ingredients = ingredients;
         }
 
         /*
